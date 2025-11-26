@@ -59,10 +59,10 @@ Supported domains:
 
 ## 📁 Project Structure
 
+```
 GCViT-PIO-Medical-Imaging/
 ├── GCVIT_PIO_Habib_Ur_Rehman.ipynb
 └── README.md
-
 ---
 
 ## 🚀 Quick Start
@@ -71,8 +71,8 @@ GCViT-PIO-Medical-Imaging/
 
 ```bash
 pip install tensorflow keras numpy matplotlib scikit-learn
-
-Running
+```
+### Running
 
 Open and run: GCVIT_PIO_Habib_Ur_Rehman.ipynb
 
