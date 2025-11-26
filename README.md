@@ -2,11 +2,18 @@
 
 Advanced hybrid deep learning architecture combining Global Context Vision Transformer (GCViT) and Perceiver IO for high-accuracy medical image classification.
 
+## ✨ Author Information
+
+**Author:** Habib Ur Rehman  
+**Email:** habib.gcuf.edu@gmail.com  
+**GitHub:** https://github.com/habib-analyst
+
 ## ✅ Publication
 
 This work has been accepted in *The Journal of Supercomputing (Springer)*:
 
-Habib Ur Rehman, "AI-Driven Multi-Disease Classification: GCViT & Perceiver IO Synergistic Framework Revolutionizing Multi-Domain Medical Diagnosis Through Advanced Hybrid Neural Architecture", The Journal of Supercomputing (Springer), 2025.  
+Habib Ur Rehman, "AI-Driven Multi-Disease Classification: GCViT & Perceiver IO Synergistic Framework Revolutionizing Multi-Domain Medical Diagnosis Through Advanced Hybrid Neural Architecture"
+The Journal of Supercomputing (Springer), 2025.  
 (DOI will be added after publication.)
 
 This repository contains the full implementation and experiments corresponding to the accepted paper.
@@ -185,14 +192,5 @@ All rights reserved by the author.
 
 ---
 
-## ✨ Author Information
-
-Created as a research project:  
-**Hybrid Global Context Vision Transformer + Perceiver IO for Medical Imaging**
-
-**Author:** Habib Ur Rehman  
-**Email:** habib.research.ai@gmail.com  
-**GitHub:** https://github.com/habib-analyst
----
-
-**Done.**
+**Created as Research Project**  
+*Hybrid Global Context Vision Transformer + Perceiver IO for Medical Imaging*
