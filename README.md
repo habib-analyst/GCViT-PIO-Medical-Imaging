@@ -1,196 +1,58 @@
-# GCViT–PIO Medical Imaging Framework
+# GCViT–PIO Medical Imaging
 
-Advanced hybrid deep learning architecture combining Global Context Vision Transformer (GCViT) and Perceiver IO for high-accuracy medical image classification.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://github.com/habib-analyst/GCViT-PIO-Medical-Imaging)
+[![GitHub stars](https://img.shields.io/github/stars/habib-analyst/GCViT-PIO-Medical-Imaging.svg)](https://github.com/habib-analyst/GCViT-PIO-Medical-Imaging)
 
-## ✨ Author Information
+A hybrid Global Context Vision Transformer (GCViT) + Perceiver IO framework for multi-disease medical image classification — brain MRI, chest X-rays, and dermatology images in one pipeline.
 
-**Author:** Habib Ur Rehman  
-**Email:** habib.gcuf.edu@gmail.com  
-**GitHub:** https://github.com/habib-analyst
-
-## ✅ Publication
-
-This work has been accepted in *The Journal of Supercomputing (Springer)*:
-
-Habib Ur Rehman, "AI-Driven Multi-Disease Classification: GCViT & Perceiver IO Synergistic Framework Revolutionizing Multi-Domain Medical Diagnosis Through Advanced Hybrid Neural Architecture"
-The Journal of Supercomputing (Springer), 2025.  
-(DOI will be added after publication.)
-
-This repository contains the full implementation and experiments corresponding to the accepted paper.
-
----
-
-## 📋 Project Overview
-
-This project presents a hybrid GCViT–PIO model combining:
-
-1. **GCViT for Global Context Feature Extraction**  
-2. **Perceiver IO for Cross-Attention Fusion**  
-3. **Classification Head for Multi-Class Medical Diagnosis**
-
-The notebook demonstrates:
-
-- Data preprocessing  
-- GCViT backbone  
-- Perceiver IO fusion  
-- Model training  
-- Evaluation and visualization  
-
-Supported domains:
-
-- Brain MRI  
-- Chest X-rays  
-- Dermatology images  
-
----
-
-## 🏗️ Architecture
-
-### 1. Global Context Vision Transformer (GCViT)
-- Multi-scale hierarchical patch embedding  
-- Global feature extraction  
-- Hybrid CNN + Transformer stem  
-- Long-range dependency modeling  
-
-### 2. Perceiver IO Module
-- Latent cross-attention  
-- Efficient feature fusion  
-- Scales well to high-dimensional data  
-
-### 3. Classification Head
-- Fully connected layers  
-- Dropout regularization  
-- Softmax output  
-
----
-
-## 📁 Project Structure
-
-```
-GCViT-PIO-Medical-Imaging/
-├── GCVIT_PIO_Habib_Ur_Rehman.ipynb
-└── README.md
-```
-
-## 🚀 Quick Start
-
-### Installation
+## Quickstart
 
 ```bash
+git clone https://github.com/habib-analyst/GCViT-PIO-Medical-Imaging
+cd GCViT-PIO-Medical-Imaging
 pip install tensorflow keras numpy matplotlib scikit-learn
 ```
 
-### Running
+Open `GCVIT_PIO_Habib_Ur_Rehman.ipynb` and run it top to bottom. The notebook is self-contained: data preprocessing, the GCViT backbone, the Perceiver IO fusion block, training (early stopping + LR scheduling), and evaluation with confusion matrices and visualizations.
+
+Input format: RGB images at 224×224, multi-class or binary labels, in train/val/test splits; normalization and augmentation are handled inside the notebook.
+
+## Results (as reported in the paper)
+
+Test metrics from the published work (accuracy / precision / recall / F1):
+
+| Domain | Accuracy | Precision | Recall | F1 |
+|---|---|---|---|---|
+| Neuro (stroke/Alzheimer's MRI) | 1.00 | 1.00 | 1.00 | 1.00 |
+| Skin (melanoma/tinea) | 0.95 | 0.95 | 0.95 | 0.95 |
+| Lung (pneumonia/lung cancer) | 1.00 | 1.00 | 1.00 | 1.00 |
+
+25,000 Kaggle images total (10k neuro MRI, 10k dermoscopic, 5k chest X-ray/CT), 70/15/15 split, standard config (224×224×3 input, batch 32, LR 1e-4, 5–20 epochs).
+
+## How it works
+
+1. **GCViT backbone** — multi-scale hierarchical patch embedding with a hybrid CNN+Transformer stem extracts global-context features.
+2. **Perceiver IO fusion** — latent cross-attention fuses the multi-scale features efficiently.
+3. **Classification head** — fully connected layers with dropout and softmax for multi-class diagnosis.
+
+## Citation
+
+```bibtex
+@article{rehman2025gcvitpio,
+  author  = {Habib Ur Rehman et al.},
+  title   = {AI-Driven Multi-Disease Classification: {GCViT} \& {Perceiver IO} Synergistic Framework Revolutionizing Multi-Domain Medical Diagnosis Through Advanced Hybrid Neural Architecture},
+  journal = {The Journal of Supercomputing},
+  publisher = {Springer},
+  year    = {2025},
+  note    = {Accepted; DOI pending}
+}
 ```
-Open and run: GCVIT_PIO_Habib_Ur_Rehman.ipynb
-```
 
-## 📊 Model Performance
+## License
 
-The GCViT–PIO architecture demonstrates:
-
-- Superior accuracy over CNN and baseline ViT  
-- Higher robustness on small medical datasets  
-- Better global feature understanding  
-- Lower false-positive rates  
-- Strong generalization across imaging domains  
-
-### Built-in Training Optimizations:
-
-- Early Stopping  
-- Learning Rate Scheduling  
-- Dropout Regularization  
-- Cross-Attention Fusion  
-- Augmentation Pipeline  
+For research and educational use. © 2026 Habib Ur Rehman
 
 ---
-
-## 🔧 Configuration
-
-Standard configuration for GCViT–PIO:
-
-- **Input Size:** 224×224×3  
-- **Patch Size:** Multi-scale GCViT embedding  
-- **Backbone:** GCViT Hierarchical Transformer  
-- **Fusion:** Perceiver IO latent cross-attention  
-- **Batch Size:** 32  
-- **Learning Rate:** 1e-4  
-- **Epochs:** 5–20  
-
----
-
-## 📈 Training Pipeline
-
-- Data Loading  
-- Preprocessing (normalize, resize, augment)  
-- Patch & feature extraction using GCViT  
-- Cross-attention fusion using Perceiver IO  
-- Train classification head  
-- Evaluate (accuracy, loss)  
-- Plot confusion matrix  
-- Visualize curves  
-
----
-
-## 💾 Model Outputs
-
-- Accuracy & loss curves  
-- Confusion matrix  
-- Predictions  
-- Classification scores  
-- Visual interpretations  
-
----
-
-## 🌟 Highlights
-
-- First hybrid GCViT + Perceiver IO for medical imaging  
-- Strong global context & long-range learning  
-- Publication-grade results  
-- Fully reproducible notebook  
-- Works across multiple medical imaging tasks  
-
----
-
-## 🎯 Key Features
-
-- Clean, portable code  
-- Modular architecture  
-- Notebook-based implementation  
-- Stable performance  
-- Reproducible experiments  
-- Research-grade pipeline  
-
----
-
-## 📝 Dataset Format
-
-- **Images:** RGB, 224×224  
-- **Labels:** Multi-class / binary  
-- **Splits:** Train, Val, Test  
-- **Preprocessing:** Normalization + Augmentation  
-
-Data preparation is fully included in the notebook.
-
----
-
-## 🔍 Utility Modules (Inside Notebook)
-
-- Data preprocessing cells  
-- GCViT block  
-- Perceiver IO block  
-- Training loop  
-- Evaluation pipeline  
-- Visualization utilities  
-
----
-
-## 📄 License
-
-This project is for research and educational use.  
-All rights reserved by the author.
-
----
-
-**Created as Research Project**  
-*Hybrid Global Context Vision Transformer + Perceiver IO for Medical Imaging*
+Built by [Habib Ur Rehman](https://github.com/habib-analyst) · ML/AI Engineer & healthcare-AI researcher ·
+[LinkedIn](https://www.linkedin.com/in/hur-dev) · [habib.top](https://habib.top)
